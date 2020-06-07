@@ -1,0 +1,13 @@
+server:
+  port: 6001
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false # 不向注册中心注册自己
+    fetch-registry: false #
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enable-self-preservation: false # 禁止自我保护
+    eviction-interval-timer-in-ms: 2000 # 自我保护间隔

@@ -1,0 +1,10 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /provider
+spring:
+  application:
+    name: zookeeper-provider
+  cloud:
+    zookeeper:
+      connect-string: c-108:2181

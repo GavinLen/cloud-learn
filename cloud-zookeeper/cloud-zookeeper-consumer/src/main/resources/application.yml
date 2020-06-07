@@ -1,0 +1,10 @@
+server:
+  port: 9001
+  servlet:
+    context-path: /consumer
+spring:
+  application:
+    name: zookeeper-consumer
+  cloud:
+    zookeeper:
+      connect-string: c-108:2181

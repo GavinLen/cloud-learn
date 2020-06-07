@@ -1,0 +1,23 @@
+server:
+  port: 9001
+  servlet:
+    context-path: /consumer
+spring:
+  application:
+    name: consul-consumer
+  cloud:
+    consul:
+      host: c-108
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+management:
+  endpoints:
+    enabled-by-default: true #开启
+    web:
+#      base-path: /manage
+      exposure:
+        include: "*" #开放所有站点
+  endpoint:
+    health:
+      show-details: always

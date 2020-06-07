@@ -1,0 +1,18 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /hello
+management:
+  endpoints:
+    enabled-by-default: true #开启
+    web:
+      base-path: /manage
+      exposure:
+        include: "*" #开放所有站点
+  endpoint:
+    health:
+      show-details: always
+
+info:
+  app :
+    name: springboot hello
