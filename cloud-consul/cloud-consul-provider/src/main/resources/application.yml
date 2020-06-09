@@ -7,25 +7,11 @@ spring:
     name: consul-provider
   cloud:
     consul:
-      host: c-108
+      host: localhost
       port: 8500
       discovery:
-        # 是否注册
-        register: true
-        # 服务的名称
         service-name: ${spring.application.name}
-        # 注册实例的 ID
-        instance-id: ${spring.application.name}:${server.port}
-        # 服务的请求端口
-        port: ${server.port}
-        # 指定开启ip地址注册
 management:
-  endpoints:
-    enabled-by-default: true #开启
-    web:
-      base-path: /manage
-      exposure:
-        include: "*" #开放所有站点
-  endpoint:
-    health:
-      show-details: always
+  health:
+    cassandra:
+      enabled: false
